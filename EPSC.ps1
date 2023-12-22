@@ -10,12 +10,12 @@ $attachment.Dispose()
 }
 
 
-$files=Get-ChildItem "$env:TEMP\*"
+$files=Get-ChildItem "$env:TEMP\*.txt"
 
 Foreach($file in $files)
 {
 Write-Host "Attaching File :- " $file
-$attachment = New-Object System.Net.Mail.Attachment "C:\l\$file"
+$attachment = New-Object System.Net.Mail.Attachment "$env:TEMP\$file"
 $ReportEmail.Attachments.Add($attachment)
 $attachment.Dispose()
 }
